@@ -1,0 +1,24 @@
+apiVersion: <replication-controller-api-version>
+kind: ReplicationController
+metadata:
+  name: <replication-controller-name>
+  labels:
+    <replication-controller-key>: <replication-controller-value>
+  selectors:
+    <replication-controller-key>: <replication-controller-value>
+  namespaces: <namespaces-name>
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: <pod-name>
+      labels:
+        <pod-key>: <pod-value>
+      selectors:
+        <pod-key>: <pod-value>
+    spec:
+      containers:
+      - name: <container-name>
+        image: <repository>/<image>:<tag>
+        ports:
+        - containerPort: 8080

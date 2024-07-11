@@ -1,0 +1,15 @@
+apiVersion: <pod-api-version>
+kind: Pod
+metadata:
+  name: <pod-name>
+  labels:
+    <pod-key>: <pod-value>
+  selectors:
+    <pod-key>: <pod-value>
+  namespaces: <namespaces-name>
+spec:
+  containers:
+  - name: <container-name>
+    image: <repository>/<image>:<tag>
+    ports:
+    - containerPort: 8080

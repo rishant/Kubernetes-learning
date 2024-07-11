@@ -1,0 +1,27 @@
+apiVersion: <replica-set-api-version>
+kind: ReplicaSet
+metadata:
+  name: <replica-set-name>
+  labels:
+    <replica-set-key>: <replica-set-value>
+  selectors:
+    <replica-set-key>: <replica-set-value>
+  namespaces: <namespaces-name>
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      <pod-key>: <pod-value>
+  template:
+    metadata:
+      name: <pod-name>
+      labels:
+        <pod-key>: <pod-value>
+      selectors:
+        <pod-key>: <pod-value>
+    spec:
+      containers:
+      - name: <container-name>
+        image: <repository>/<image>:<tag>
+        ports:
+        - containerPort: 8080

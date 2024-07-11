@@ -1,0 +1,28 @@
+apiVersion: <deployment-api-version>
+kind: Deployment
+metadata:
+  name: <deployment-name>
+  labels:
+    <deployment-key>: <deployment-value>
+  selectors:
+    <deployment-key>: <deployment-value>
+  namespaces: <namespaces-name>
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      <pod-key>: <pod-value>
+  strategy: {}
+  template:
+    metadata:
+      name: <pod-name>
+      labels:
+        <pod-key>: <pod-value>
+      selectors:
+        <pod-key>: <pod-value>
+    spec:
+      containers:
+        - name: <container-name>
+          image: <repository>/<image>:<tag>
+          ports:
+            - containerPort: 8080
